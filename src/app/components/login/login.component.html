@@ -3,31 +3,43 @@
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-card class="">
+  <ion-card-header class="bg-header">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="7" push="5" class="col-5 align-self-end">
+          <img src="assets/profile-img.png" alt="">
+        </ion-col>
+        <ion-col size="5" pull="7" >
+          <ion-card-title class="text-title" style="font-size: 20px;">Welcome Back!</ion-card-title>
+          <div class="text-title" style="font-size: 13px;">Sign in to continue to Your-information.</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-header>
 
-<ion-content>
-  <form (ngSubmit)="login()">
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input
-        type="text"
-        name="username"
-        [(ngModel)]="credentials.username"
-        required
-      ></ion-input>
-    </ion-item>
+  <ion-card-content>
+    <form (ngSubmit)="login()">
+      <ion-item class="p-10">
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" name="username" [(ngModel)]="credentials.username" required></ion-input>
+      </ion-item>
+      <ion-item class="p-10">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="credentials.password" required></ion-input>
+      </ion-item>
+      <ion-checkbox class="p-10">Remember me</ion-checkbox>
+      <ion-button type="submit" expand="block">Login</ion-button>
+    </form>
+    <p class="p-10">Don't have an account? <a [routerLink]="['/register']">Register</a></p>
+  </ion-card-content>
 
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input
-        type="password"
-        name="password"
-        [(ngModel)]="credentials.password"
-        required
-      ></ion-input>
-    </ion-item>
+</ion-card>
 
-    <ion-button type="submit" expand="block">Login</ion-button>
-  </form>
-
-  <p>Don't have an account? <a [routerLink]="['/register']">Register</a></p>
-</ion-content>
+<ion-card class="box-none">
+  <ion-card-content>
+    © 2024 yourInformation. Crafted with
+    <ion-icon name="heart" aria-label="Favorite"></ion-icon>
+    by Nana
+  </ion-card-content>
+</ion-card>
